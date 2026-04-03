@@ -1,29 +1,17 @@
-abstract class Car{
-    public abstract void drive();
-    public abstract void fly();
-    public void playMusic(){
-        System.out.println("Playing music");
+class A {
+    public void show() {
+        System.out.println("in A show");
     }
 }
 
-abstract class WagonR extends Car{
-    public void drive(){
-        System.out.println("Driving");
-    }
-}
-
-class UpdatedWagonR extends WagonR{
-    public void fly(){
-        System.out.println("Flying");
-    }
-}
-
-
-public class Main {
-    public static void main(String[] args) {
-        Car obj = new UpdatedWagonR();
-        obj.drive();
-        obj.playMusic();
-        obj.fly();
+    public class Main {
+        public static void main(String[] args) {
+            A obj = new A(){
+                // Anonymous inner class also override the method
+                public void show(){
+                    System.out.println("in new show");
+                }
+            };
+            obj.show();
     }
 }
