@@ -1,29 +1,27 @@
-abstract class Car{
-    public abstract void drive();
-    public abstract void fly();
-    public void playMusic(){
-        System.out.println("Playing music");
+interface A {
+    int age = 44;  // All the variables in interfaces final and static
+    String area = "Colombo";
+
+    void show();
+    void config();
+}
+
+class B implements A {
+    public void show(){
+        System.out.println("in show");
+    }
+    public void config(){
+        System.out.println("in config");
     }
 }
 
-abstract class WagonR extends Car{
-    public void drive(){
-        System.out.println("Driving");
-    }
-}
+    public class Main {
+        public static void main(String[] args) {
+            A obj = new B();
+            obj.show();
+            obj.config();
 
-class UpdatedWagonR extends WagonR{
-    public void fly(){
-        System.out.println("Flying");
-    }
-}
-
-
-public class Main {
-    public static void main(String[] args) {
-        Car obj = new UpdatedWagonR();
-        obj.drive();
-        obj.playMusic();
-        obj.fly();
+            // Static variable in interface can directly access without objects
+            System.out.println(A.area);
     }
 }
