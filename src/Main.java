@@ -1,37 +1,14 @@
-// class - class > extends
-// class - interface > implements
-// interface - interface > extends
-
-interface A {
-    void show();
-    void config();
+enum Status {
+    RUNNING, Failed, Pending, Success;
 }
 
-interface X {
-    void run();
-}
+public class Main {
+    public static void main(String[] args) {
+        int i = 5;
+        Status[] ss = Status.values();
 
-interface Y extends X {}
-
-class B implements A, Y {
-    public void show(){
-        System.out.println("in show");
-    }
-    public void config(){
-        System.out.println("in config");
-    }
-    public void run(){
-        System.out.println("in run");
-    }
-}
-
-    public class Main {
-        public static void main(String[] args) {
-            A obj = new B();
-            obj.show();
-            obj.config();
-
-            B obj2 = new B();
-            obj2.run();
+        for (Status s : ss) {
+            System.out.println(s + " : " + s.ordinal());
+        }
     }
 }
