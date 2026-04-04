@@ -1,17 +1,27 @@
-interface A {
-    int age = 44;  // All the variables in interfaces final and static
-    String area = "Colombo";
+// class - class > extends
+// class - interface > implements
+// interface - interface > extends
 
+interface A {
     void show();
     void config();
 }
 
-class B implements A {
+interface X {
+    void run();
+}
+
+interface Y extends X {}
+
+class B implements A, Y {
     public void show(){
         System.out.println("in show");
     }
     public void config(){
         System.out.println("in config");
+    }
+    public void run(){
+        System.out.println("in run");
     }
 }
 
@@ -21,7 +31,7 @@ class B implements A {
             obj.show();
             obj.config();
 
-            // Static variable in interface can directly access without objects
-            System.out.println(A.area);
+            B obj2 = new B();
+            obj2.run();
     }
 }
