@@ -1,4 +1,8 @@
-
+class DiluException extends Exception {
+    public DiluException(String string) {
+        super(string);
+    }
+}
     public class Main {
         public static void main(String[] args) {
             int i = 20;
@@ -7,10 +11,10 @@
             try {
                 j = 18/i;
                 if (j==0) {
-                    throw new ArithmeticException("I don't want to print zero");
+                    throw new DiluException("I don't want to print zero");
                 }
             }
-            catch (ArithmeticException e) {
+            catch (DiluException e) {
                 j = 18/1;
                 System.out.println("That the default output " + e);
             }
