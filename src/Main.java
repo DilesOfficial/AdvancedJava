@@ -1,18 +1,11 @@
-class A {
-    public void show() throws ClassNotFoundException {
-        Class.forName("Calc");
-    }
-}
+import java.util.Scanner;
+
 public class Main {
-    static {
-        System.out.println("Class Loaded");
-    }
     public static void main(String[] args) {
-        A obj = new A();
-        try {
-            obj.show();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        System.out.println("Enter a number ");
+
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        System.out.println(num);
     }
 }
