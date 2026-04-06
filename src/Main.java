@@ -1,16 +1,24 @@
+class A extends Thread {
+    public void run() {
+        for (int i=1; i<=10; i++){
+            System.out.println("Hi");
+        }
+    }
+}
 
-    public class Main {
-        public static void main(String[] args) {
-            int i = 0;
-            int j = 0;
+class B extends Thread {
+    public void run() {
+        for (int i=1; i<=10; i++){
+            System.out.println("Hello");
+        }
+    }
+}
 
-            try {
-                j = 18/i;
-            }
-            catch (Exception e) {
-                System.out.println("Something went wrong");
-            }
-            System.out.println(j);
-            System.out.println("bye");
+public class Main {
+    public static void main(String[] args) {
+        A obj1 = new A();
+        B obj2 = new B();
+        obj1.start();
+        obj2.start();
     }
 }
