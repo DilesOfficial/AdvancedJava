@@ -6,18 +6,10 @@ public class Main {
     public static void main(String[] args) {
         List<String> names = Arrays.asList("Navin", "Laxmi", "John", "Sansa");
 
-//        Optional<String> name = names.stream()
-//                .filter(str -> str.contains("x"))
-//                .findFirst();
-//
-//        System.out.println(name.orElse("Not Found"));
+        List<String> uNames = names.stream()
+                .map(String::toUpperCase)
+                .toList();
 
-        // dewidihatama karanna puluwan
-        String name = names.stream()
-                .filter(str -> str.contains("x"))
-                .findFirst()
-                .orElse("Not Found");
-
-        System.out.println(name);
+        uNames.forEach(System.out::println);
     }
 }
