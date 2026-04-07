@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 public class Main {
@@ -7,15 +8,19 @@ public class Main {
 
         List<Integer> nums = Arrays.asList( 4, 5, 7, 3, 2, 6);
 
-//        for (int i = 0; i < nums.size(); i++) {
-//            System.out.println(nums.get(i));
-//        }
+        // Code reducing using Lambda Expression
+        Consumer<Integer> con = n -> System.out.println(n);
 
-//        for (int n : nums){
-//            System.out.println(n);
-//        }
-
+        // Same as For Each Consumer<Integer> con = n -> System.out.println(n);
         nums.forEach(n -> System.out.println(n));
+
+
+
+
+
+
+
+
 
 //        int sum = 0;
 //        for (int n : nums) {
