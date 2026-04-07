@@ -1,21 +1,32 @@
+// TODO: Define PrinterTask class that implements Runnable
+class PrinterTask implements Runnable{
+    public void run(){
+        for(int i = 1; i<=2;i++){
+            System.out.println(Thread.currentThread().getName() + ": Running task " + i);
+        }
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
-        Runnable obj1 = () -> {
-        for (int i=1; i<=5; i++){
-            System.out.println("Hi");
-            try {Thread.sleep(10);} catch (InterruptedException e) {e.printStackTrace();}
-        }
-    };
-        Runnable obj2 = () -> {
-            for (int i=1; i<=5; i++){
-                System.out.println("Hello");
-                try {Thread.sleep(10);} catch (InterruptedException e) {e.printStackTrace();}
-            }
-        };
+        // TODO: Create a single PrinterTask object
+        PrinterTask obj = new PrinterTask();
+        // TODO: Create two threads using the same task
+        // Name them "Worker-1" and "Worker-2"
+        Thread t1 = new Thread(obj, "Worker-1");
+        Thread t2 = new Thread(obj, "Worker-2");
 
-        Thread t1 = new Thread(obj1);
-        Thread t2 = new Thread(obj2);
+        // TODO: Start both threads
         t1.start();
         t2.start();
+
+
+        // TODO: Use join() to wait for both threads to finish
+        try {
+            t1.join();
+            t2.join();
+        } catch (Exception e) {
+            System.out.println("Thread was interrupted!");
+        }
     }
 }
