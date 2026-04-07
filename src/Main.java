@@ -1,35 +1,30 @@
-import java.util.*;
-
-class Student{
-    String name;
-    int age;
-
-    public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
-}
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        Comparator<Student> com = (i,j) -> i.age > j.age ? 1 : -1;
 
-        List<Student> studs = new ArrayList<>();
-        studs.add(new Student("Dilusha",43));
-        studs.add(new Student("Kalhara",55));
-        studs.add(new Student("Nisansala",42));
-        studs.add(new Student("Madun",22));
+        List<Integer> nums = Arrays.asList( 4, 5, 7, 3, 2, 6);
 
-        Collections.sort(studs, com);
-        for (Student s : studs) {
-            System.out.println(s);
-        }
+//        for (int i = 0; i < nums.size(); i++) {
+//            System.out.println(nums.get(i));
+//        }
+
+//        for (int n : nums){
+//            System.out.println(n);
+//        }
+
+        nums.forEach(n -> System.out.println(n));
+
+//        int sum = 0;
+//        for (int n : nums) {
+//            if (n % 2 == 0) {
+//                n = n * 2;
+//                sum = sum + n;
+//            }
+//        }
+//
+//            System.out.println(nums);
     }
 }
