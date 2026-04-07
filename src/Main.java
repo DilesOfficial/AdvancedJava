@@ -1,16 +1,23 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
+        List<String> names = Arrays.asList("Navin", "Laxmi", "John", "Sansa");
 
-        List<Integer> nums = Arrays.asList( 4, 5, 7, 3, 2, 6);
+//        Optional<String> name = names.stream()
+//                .filter(str -> str.contains("x"))
+//                .findFirst();
+//
+//        System.out.println(name.orElse("Not Found"));
 
-        int result = nums.stream()
-                .filter(n -> n % 2 == 0)
-                .map(n -> n * n)
-                .reduce(0, (c, e) -> c + e);
+        // dewidihatama karanna puluwan
+        String name = names.stream()
+                .filter(str -> str.contains("x"))
+                .findFirst()
+                .orElse("Not Found");
 
-        System.out.println(result);
+        System.out.println(name);
     }
 }
