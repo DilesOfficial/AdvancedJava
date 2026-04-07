@@ -1,32 +1,21 @@
-// TODO: Define PrinterTask class that implements Runnable
-class PrinterTask implements Runnable{
-    public void run(){
-        for(int i = 1; i<=2;i++){
-            System.out.println(Thread.currentThread().getName() + ": Running task " + i);
-        }
-    }
-}
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // TODO: Create a single PrinterTask object
-        PrinterTask obj = new PrinterTask();
-        // TODO: Create two threads using the same task
-        // Name them "Worker-1" and "Worker-2"
-        Thread t1 = new Thread(obj, "Worker-1");
-        Thread t2 = new Thread(obj, "Worker-2");
+        List<Integer> nums = new ArrayList<Integer>();
+        nums.add(5);
+        nums.add(8);
+        nums.add(4);
+        nums.add(7);
 
-        // TODO: Start both threads
-        t1.start();
-        t2.start();
+        System.out.println(nums.indexOf(8));
+        System.out.println(nums.get(0));
 
-
-        // TODO: Use join() to wait for both threads to finish
-        try {
-            t1.join();
-            t2.join();
-        } catch (Exception e) {
-            System.out.println("Thread was interrupted!");
-        }
+//        for (Object n : nums) {
+//            int num = (Integer) n;
+//            System.out.println(num*2);
+//        }
     }
 }
