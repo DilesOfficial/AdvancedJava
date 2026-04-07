@@ -1,21 +1,19 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        Collection<Integer> nums = new TreeSet<Integer>();
-        nums.add(52);
-        nums.add(81);
-        nums.add(46);
-        nums.add(79);
+        Map<String, Integer> students = new HashMap<>();
 
-        Iterator<Integer> values = nums.iterator();
+        students.put("Dilusha", 78);
+        students.put("Sahan", 45);
+        students.put("Thamindu", 63);
+        students.put("Vishal", 23);
+        students.put("Sahan", 66);
 
-        while (values.hasNext()) {
-            System.out.println(values.next());
+        for (String key : students.keySet()) {
+            System.out.println(key + ": " + students.get(key));
         }
 
-//        for (int n : nums) {
-//            System.out.println(n);
-//        }
     }
 }
